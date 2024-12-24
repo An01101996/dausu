@@ -1,0 +1,104 @@
+/* Toàn bộ body */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    /* Background */
+    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2U2bWhxdWJ3Z3kxYzd3c2QzejkxOXdmeXA5bWY4dW13eXhnOHkxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9w475hDWEPVlu/giphy.webp') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+/* Video hiển thị hoặc ẩn */
+.hidden-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Đưa video ra sau tất cả nội dung */
+    object-fit: cover; /* Video bao phủ toàn màn hình */
+    display: none; /* Ẩn video ban đầu */
+}
+
+/* Hiện video khi nhấn vào hộp quà */
+.video-visible {
+    display: block !important; /* Hiện video */
+}
+
+/* Dòng chữ "Nhấp Để Mở" */
+.click-to-open {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6347;
+    z-index: 10;
+    animation: glowText 1.5s infinite;
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ffd700, 0 0 20px #ffd700;
+    }
+    50% {
+        text-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #ff6347, 0 0 40px #ff6347;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ffd700, 0 0 20px #ffd700;
+    }
+}
+
+/* Hộp quà */
+.gift-box-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Hiệu ứng rung lắc */
+    z-index: 20;
+}
+
+.gift-box {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: bounce 2s infinite; /* Hiệu ứng rung lắc */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Dòng chữ dưới màn hình */
+.bottom-message h1 {
+    position: fixed; /* Dòng chữ cố định */
+    bottom: 20px; /* Cách đáy màn hình 20px */
+    left: 50%; /* Canh giữa màn hình */
+    transform: translateX(-50%); /* Căn chỉnh chữ ra giữa */
+    font-size: 16px; /* Kích thước chữ vừa đủ */
+    font-weight: bold;
+    color: #ffd700; /* Màu vàng nổi bật */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ff6347, 0 0 30px #32cd32; /* Hiệu ứng lấp lánh */
+    z-index: 15;
+    text-align: center;
+    line-height: 1.4; /* Tăng khoảng cách giữa các dòng */
+    width: 90%; /* Đảm bảo dòng chữ không tràn ra ngoài */
+}

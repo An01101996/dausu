@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIÁNG SINH VUI VẺ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Nhạc nền tự động phát -->
+    <audio id="backgroundAudio" loop>
+        <source src="jingle-bells-trap-remix.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát nhạc.
+    </audio>
+
+
+    <!-- Dòng chữ "Nhấp Để Mở" -->
+    <div class="click-to-open">
+        <p>Nhấp Để Mở</p>
+    </div>
+
+    <!-- Hộp quà -->
+    <div class="gift-box-wrapper" id="giftBox">
+        <img src="giphy.webp" alt="Hộp quà" class="gift-box">
+    </div>
+
+    <!-- Dòng chữ chúc mừng -->
+    <div class="bottom-message" id="messageBox">
+        <h1> Giáng Sinh ấm Áp , An Lành. Yêu Vợ, Yêu Đậu Su Nhiều !!!!!!</h1>
+    </div>
+
+    <!-- Video hiển thị ở chế độ nền -->
+    <video id="videoPlayer" autoplay loop muted playsinline class="hidden-video">
+        <source src="video_2024-12-24_08-33-15.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video.
+    </video>
+
+    <script src="script.js"></script>
+</body>
+</html>
